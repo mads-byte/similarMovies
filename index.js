@@ -16,6 +16,7 @@ async function getResults(query) {
 }
 
 searchInput.addEventListener('input', async () => {
+    resultsArea.innerHTML = ""
     const searchResults = await getResults(searchInput.value)
     console.log(Array.isArray(searchResults))
     console.log(searchResults)
