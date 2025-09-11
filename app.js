@@ -28,10 +28,8 @@ app.get('/movies', async (req, res) => {
             }
         }
         const response = await fetch(url, options);
-        const data = await response.json()
-        const movies = res.json(data.results)
-        console.log(movies)
-        return JSON.stringify(movies)
+        const data = await response.json();
+        res.json(data);
     } catch (error) {
         console.log(`Error fetching data: ${error}`)
     }
