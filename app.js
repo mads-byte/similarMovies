@@ -1,5 +1,3 @@
-import dotenv from 'dotenv' //this module allows me to hide my authentication token in a file that will not be visible to the client
-dotenv.config(); //loads envorionment variables into process.env and makes them available for use
 
 import express from 'express'
 
