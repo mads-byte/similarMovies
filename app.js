@@ -4,8 +4,8 @@ dotenv.config(); //loads envorionment variables into process.env and makes them 
 import express from 'express'
 
 // creating two different apps to handle two servers
-const app = express();
-const app2 = express();
+export const app = express();
+export const app2 = express();
 
 //allows me 
 //"Cross Origin Resource Sharing" - changes security configurations which allows me to make requests to tmdb 
@@ -73,4 +73,3 @@ app2.listen(PORT2, () => {
     console.log(`Server running on port ${PORT2}`)
 })
 
-module.exports = app
