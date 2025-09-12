@@ -9,15 +9,20 @@
 </head>
 
 <body>
-    <h1>Similar Movies</h1>
+    <header>
+        <h1>Find Similar Movies</h1>
+        <h2>Simply search for a movie, click on it, and see movies just like it!</h2>
+    </header>
     <main>
-        <form>
-            <input id="search-input" type="text" autocomplete="false">
-            <input id="search-btn" type="submit">
+        <form autocomplete="off">
+            <input id="search-input" type="text" placeholder="Enter movie title">
+            <button id="search-btn">Search</button>
         </form>
+
+
         <section id="results-body">
+            <div id="no-result"></div>
             <div id="results-area"></div>
-            <div id="search-history"></div>
         </section>
 
     </main>
