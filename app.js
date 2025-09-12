@@ -65,10 +65,10 @@ app2.get('/movie/:movieId/similar', async (req, res) => { //":movieId" is a plac
 
 
 //creating two server instances and listening for requests
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
 
-app2.listen(PORT2, '0.0.0.0', () => {
+app2.listen(PORT2, () => {
     console.log(`Server running on port ${PORT2}`)
 })
