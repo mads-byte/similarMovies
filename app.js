@@ -1,17 +1,17 @@
 
 import express from 'express'
 
-// creating two different apps to handle two servers
+//create app variable to refer to express functionality
 export const app = express();
-export const app2 = express();
 
-//allows me 
-//"Cross Origin Resource Sharing" - changes security configurations which allows me to make requests to tmdb 
+
+
+//"Cross Origin Resource Sharing" - changes security configurations which allows the server to load resources from an origin other than its own
 import cors from 'cors'
 app.use(cors())
-app2.use(cors())
 
-//setting the ports where servers will run
+
+//setting the port where server will run
 const PORT = process.env.PORT || 3000
 
 
