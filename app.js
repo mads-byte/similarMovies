@@ -11,6 +11,8 @@ import cors from 'cors'
 app.use(cors())
 
 
+app.use(express.static("public"));
+
 //setting the port where server will run
 const PORT = process.env.PORT || 3000
 
