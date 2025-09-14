@@ -19,7 +19,7 @@ async function getResults(query) {
 
 async function getSimilar(id) {
     try {
-        const similarData = await fetch(`http://localhost:3001/movie/${id}/similar`)
+        const similarData = await fetch(`http://localhost:3000/movie/${id}/similar`)
         const similarMovies = await similarData.json()
         const similarResults = similarMovies.results
         console.log(similarResults)

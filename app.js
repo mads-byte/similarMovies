@@ -13,7 +13,7 @@ app2.use(cors())
 
 //setting the ports where servers will run
 const PORT = process.env.PORT || 3000
-const PORT2 = process.env.PORT || 3001
+
 
 //storing the api authentication token in a variable for future use
 const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWJhNDI4ZDhlM2I4ZjU4NzgxMjdlMTVkMTMyZTljMCIsIm5iZiI6MTc1NzQzMzMzMy41NDQ5OTk4LCJzdWIiOiI2OGMwNGRmNTY0ZDI3ODc4OWIxZjVhOTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.1TWIu5uuFI21JK8ut--UogQGmmQlImswus54yi8UOzA'
@@ -38,9 +38,9 @@ app.get('/movies', async (req, res) => { //targeting the movies param of the url
     }
 })
 
+const router = express.Router() //setting up a route for similar movies in addition to the route for search by title
 
-//uses the same structure as the one above
-app2.get('/movie/:movieId/similar', async (req, res) => { //":movieId" is a placeholder for the id that will go in that spot
+router.get('/movie/:movieId/similar', async (req, res) => { //":movieId" is a placeholder for the id that will go in that spot
     try {
         const Id = req.params.movieId
         const url = `https://api.themoviedb.org/3/movie/${Id}/similar?language=en-US&page=1`
@@ -61,13 +61,11 @@ app2.get('/movie/:movieId/similar', async (req, res) => { //":movieId" is a plac
     }
 })
 
+app.use(router)
 
-//creating two server instances and listening for requests
-app.listen(PORT, () => {
+//creating a server instance and listening for requests
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on port ${PORT}`)
 })
 
-app2.listen(PORT2, () => {
-    console.log(`Server running on port ${PORT2}`)
-})
 
