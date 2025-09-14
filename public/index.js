@@ -8,7 +8,8 @@ async function getResults(query) {
     const search = encodeURIComponent(query)
 
     try {
-        const movieData = await fetch(`http://localhost:3000/movies?q=${search}`)
+        //const movieData = await fetch(`http://localhost:3000/movies?q=${search}`)
+        const movieData = await fetch(`/movies?q=${search}`)
         const movies = await movieData.json()
         const results = movies.results
         return results
@@ -19,7 +20,8 @@ async function getResults(query) {
 
 async function getSimilar(id) {
     try {
-        const similarData = await fetch(`http://localhost:3000/movie/${id}/similar`)
+        //const similarData = await fetch(`http://localhost:3000/movie/${id}/similar`)
+        const similarData = await fetch(`/movie/${id}/similar`)
         const similarMovies = await similarData.json()
         const similarResults = similarMovies.results
         console.log(similarResults)
