@@ -4,7 +4,7 @@ const resultsArea = document.getElementById("results-area")
 const noResult = document.getElementById("no-result")
 const backBtnArea = document.getElementById("back-btn")
 const backBtn = document.createElement('button')
-backBtn.innerHTML = 'Go Back'
+backBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Go Back'
 backBtn.addEventListener('click', async () => {
     resultsArea.innerHTML = ""
     populateResults()
