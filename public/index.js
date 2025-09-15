@@ -3,7 +3,11 @@ const searchInput = document.getElementById("search-input")
 const resultsArea = document.getElementById("results-area")
 const noResult = document.getElementById("no-result")
 const backBtnArea = document.getElementById("back-btn")
-
+const backBtn = document.createElement('button')
+backBtn.innerHTML = 'Go Back'
+backBtn.addEventListener('click', async () => {
+    populateResults()
+})
 
 async function getResults(query) {
     const search = encodeURIComponent(query)
@@ -25,6 +29,7 @@ async function getSimilar(id) {
         const similarData = await fetch(`/movie/${id}/similar`)  //removing  localhost to allow Render to modify the url
         const similarMovies = await similarData.json()
         const similarResults = similarMovies.results
+        backBtnArea.appendChild(backBtn)
         return similarResults
     } catch (error) {
         console.log(`Error: ${error}`)
@@ -76,17 +81,12 @@ async function populateResults() {
     })
 }
 
-const backBtn = document.createElement('button')
-backBtn.innerHTML = 'Go Back'
-backBtn.addEventListener('click', async () => {
-    populateResults()
-})
+
 
 searchBtn.addEventListener('click', async (event) => {
     event.preventDefault()
     resultsArea.innerHTML = ""
     noResult.innerHTML = ""
     populateResults()
-    backBtnArea.appendChild(backBtn)
 })
 
