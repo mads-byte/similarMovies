@@ -40,9 +40,9 @@ app.get('/movies', async (req, res) => { //targeting the movies param of the url
     }
 })
 
-const router = express.Router() //setting up a route for similar movies in addition to the route for search by title
+const router = express.Router() //setting up a route on the same server for similar movies in addition to the route for search by title
 
-router.get('/movie/:movieId/similar', async (req, res) => { //":movieId" is a placeholder for the id that will go in that spot
+router.get('/movie/:movieId/similar', async (req, res) => { //"movieId" is the name given for the id that will go in that spot
     try {
         const Id = req.params.movieId
         const url = `https://api.themoviedb.org/3/movie/${Id}/similar?language=en-US&page=1`
