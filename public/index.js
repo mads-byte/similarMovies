@@ -74,7 +74,7 @@ async function populateResults() {
                 } else {
                     overview = simMovie.overview
                 }
-                simMovieCard.innerHTML = `<div style="height: 231px; width: 154px; background-color: #04CD6C; margin: auto"><img style="object-fit: cover;" src="https://image.tmdb.org/t/p/w154/${simMovie.poster_path}"></div><div>${simMovie.title}</div><div>${simMovie.release_date}</div><div>${overview}</div>`
+                simMovieCard.innerHTML = `<div style="height: 231px; width: 154px; background-color: #04CD6C; margin: auto"><img style="height: 231px; width: 154px; object-fit: cover;" src="https://image.tmdb.org/t/p/w154/${simMovie.poster_path}"></div><div>${simMovie.title}</div><div>${simMovie.release_date}</div><div>${overview}</div>`
                 simMovieCard.classList.add('similarCard')
                 resultsArea.appendChild(simMovieCard)
             })
