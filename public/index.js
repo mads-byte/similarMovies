@@ -40,6 +40,7 @@ async function getSimilar(id) {
 
 async function populateResults() {
     noResult.innerHTML = ""
+    backBtnArea.innerHTML = ""
     const searchResults = await getResults(searchInput.value)
     if (searchResults.length === 0) {
         const message = document.createElement("div")
