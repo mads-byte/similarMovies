@@ -2,6 +2,7 @@ const searchBtn = document.getElementById("search-btn")
 const searchInput = document.getElementById("search-input")
 const resultsArea = document.getElementById("results-area")
 const noResult = document.getElementById("no-result")
+const backBtnArea = document.getElementById("back-btn")
 
 
 async function getResults(query) {
@@ -9,7 +10,7 @@ async function getResults(query) {
 
     try {
         //const movieData = await fetch(`http://localhost:3000/movies?q=${search}`)
-        const movieData = await fetch(`/movies?q=${search}`)
+        const movieData = await fetch(`/movies?q=${search}`) //removing  localhost to allow Render to modify the url
         const movies = await movieData.json()
         const results = movies.results
         return results
@@ -21,10 +22,9 @@ async function getResults(query) {
 async function getSimilar(id) {
     try {
         //const similarData = await fetch(`http://localhost:3000/movie/${id}/similar`)
-        const similarData = await fetch(`/movie/${id}/similar`)
+        const similarData = await fetch(`/movie/${id}/similar`)  //removing  localhost to allow Render to modify the url
         const similarMovies = await similarData.json()
         const similarResults = similarMovies.results
-        console.log(similarResults)
         return similarResults
     } catch (error) {
         console.log(`Error: ${error}`)
@@ -32,10 +32,7 @@ async function getSimilar(id) {
 
 }
 
-searchBtn.addEventListener('click', async (event) => {
-    event.preventDefault()
-    resultsArea.innerHTML = ""
-    noResult.innerHTML = ""
+async function populateResults() {
     const searchResults = await getResults(searchInput.value)
     if (searchResults.length === 0) {
         const message = document.createElement("div")
@@ -77,5 +74,19 @@ searchBtn.addEventListener('click', async (event) => {
         })
         resultsArea.appendChild(movieDiv)
     })
+}
+
+const backBtn = document.createElement('button')
+backBtn.innerHTML = 'Go Back'
+backBtn.addEventListener('click', async () => {
+    populateResults()
+})
+
+searchBtn.addEventListener('click', async (event) => {
+    event.preventDefault()
+    resultsArea.innerHTML = ""
+    noResult.innerHTML = ""
+    populateResults()
+    backBtnArea.appendChild(backBtn)
 })
 
