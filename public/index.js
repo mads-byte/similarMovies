@@ -6,6 +6,7 @@ const backBtnArea = document.getElementById("back-btn")
 const backBtn = document.createElement('button')
 backBtn.innerHTML = 'Go Back'
 backBtn.addEventListener('click', async () => {
+    resultsArea.innerHTML = ""
     populateResults()
 })
 
@@ -38,6 +39,7 @@ async function getSimilar(id) {
 }
 
 async function populateResults() {
+    noResult.innerHTML = ""
     const searchResults = await getResults(searchInput.value)
     if (searchResults.length === 0) {
         const message = document.createElement("div")
