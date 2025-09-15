@@ -24,11 +24,35 @@ input {
     font-size: 30px;
 }
 
-button {
+#search-btn {
     font-size: 35px;
+    font-size: 30px;
+    background-color: #60FCB0;
+    border-style: none;
+    border-radius: 10px;
+    padding: 8px;
 }
 
-button:hover {
+#search-btn:hover {
+    cursor: pointer;
+    background-color: #04CD6C;
+}
+
+#back-btn {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.back-button-style {
+    font-size: 35px;
+    background-color: #75C1E7;
+    border-style: none;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.back-button-style:hover {
+    background-color: #4DAFE0;
     cursor: pointer;
 }
 

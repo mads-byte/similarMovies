@@ -5,6 +5,7 @@ const noResult = document.getElementById("no-result")
 const backBtnArea = document.getElementById("back-btn")
 const backBtn = document.createElement('button')
 backBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Go Back'
+backBtn.classList.add("back-button-style");
 backBtn.addEventListener('click', async () => {
     resultsArea.innerHTML = ""
     populateResults()
