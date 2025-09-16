@@ -56,7 +56,7 @@ async function populateResults() {
         } else {
             overview = movie.overview
         }
-        movieDiv.innerHTML = `<div style="height: 231px; width: 154px; background-color: #04CD6C; margin: auto; overflow: hidden;"><img style="width: 100%; height: 100%" src="https://image.tmdb.org/t/p/w154/${movie.poster_path}"></div><div style="padding-top: 10px; font-size:24px; font-weight: bold;">${movie.title}<div><div style="margin-bottom: 20px">${movie.release_date}<div><div>${overview}</div><h2 style="display: block; font-size: 30px">Show Similar Movies</h2>`
+        movieDiv.innerHTML = `<div style="height: 231px; width: 154px; background-color: #04CD6C; margin: auto; overflow: hidden;"><img style="width: 100%; height: 100%" src="https://image.tmdb.org/t/p/w154/${movie.poster_path}"></div><div style="padding-top: 10px; font-size:24px; font-weight: bold;">${movie.title}</div><div style="margin-bottom: 20px">${movie.release_date}<div><div>${overview}</div><h2 style="display: block; font-size: 30px">Show Similar Movies</h2>`
         movieDiv.classList.add('movieCard')
         movieDiv.addEventListener('click', async () => {
             resultsArea.innerHTML = ""
