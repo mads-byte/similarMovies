@@ -10,7 +10,8 @@ body {
 }
 
 header {
-    color: white
+    color: white;
+    padding-top: 50px;
 }
 
 main {
