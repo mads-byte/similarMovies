@@ -17,7 +17,7 @@ app.use(express.static("public"));
 const PORT = process.env.PORT || 3000
 
 
-//storing the api authentication token in a variable for future use
+
 const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWJhNDI4ZDhlM2I4ZjU4NzgxMjdlMTVkMTMyZTljMCIsIm5iZiI6MTc1NzQzMzMzMy41NDQ5OTk4LCJzdWIiOiI2OGMwNGRmNTY0ZDI3ODc4OWIxZjVhOTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.1TWIu5uuFI21JK8ut--UogQGmmQlImswus54yi8UOzA'
 
 //setting the route for the request
