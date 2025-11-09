@@ -1,6 +1,7 @@
 
 import express from 'express'
-
+import dotenv from 'dotenv'
+dotenv.config();
 //create app variable to refer to express functionality
 export const app = express();
 
@@ -18,7 +19,7 @@ const PORT = process.env.PORT || 3000
 
 
 
-const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWJhNDI4ZDhlM2I4ZjU4NzgxMjdlMTVkMTMyZTljMCIsIm5iZiI6MTc1NzQzMzMzMy41NDQ5OTk4LCJzdWIiOiI2OGMwNGRmNTY0ZDI3ODc4OWIxZjVhOTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.1TWIu5uuFI21JK8ut--UogQGmmQlImswus54yi8UOzA'
+const accessToken = process.env.ACCESS_TOKEN
 
 //setting the route for the request
 app.get('/movies', async (req, res) => { //targeting the movies param of the url
